@@ -63,7 +63,7 @@ public class Server {
 		}
 	}
 	
-	//内部类    表示与一个客户端的连接
+	//内部类    表示与一个客户端的连接ennn
 	public class ClientCon implements Runnable{
 		Socket s=null;//通过套接字与客户端进行连接
 		DataInputStream dis=null;
