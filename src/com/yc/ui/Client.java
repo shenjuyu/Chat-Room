@@ -2,8 +2,6 @@ package com.yc.ui;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.layout.FillLayout;
 
 import java.io.DataInputStream;
@@ -22,11 +20,9 @@ import org.eclipse.swt.widgets.Text;
 import com.yc.util.YcUtil;
 
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.TableColumn;
 
 /**
  * 多人在线聊天室SWT实现
@@ -351,7 +347,6 @@ public class Client implements Runnable {
 								users.setText(usersStr);
 							}
 						});
-						
 					}
 				}
 			} catch (IOException e) {

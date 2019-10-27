@@ -8,9 +8,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yc.listener.Even;
-import com.yc.listener.LoginListener;
-import com.yc.listener.MyLoginListener;
 import com.yc.util.YcUtil;
 
 /**
@@ -23,7 +20,6 @@ public class Server {
 	private ServerSocket ss=null;//服务器套接字对象
 	private List<ClientCon> clients=new ArrayList<ClientCon>();//客户端的集合   一个服务器可以有多个客户端
 	
-	private LoginListener listenter;
 
 	public static void main(String[] args) {
 		new Server().startServer();
@@ -108,7 +104,6 @@ public class Server {
 //					dos.writeUTF("users\n"+list);//调用cc中send()方法 发送信息
 //					System.out.println(".....");
 //				}
-				
 			} catch (IOException e) {
 				System.out.println("建立与客户机"+s.getInetAddress().getHostAddress()+"的连接失败");
 				e.printStackTrace();
