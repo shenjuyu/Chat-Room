@@ -70,10 +70,13 @@ public class Client implements Runnable {
 			
 			text_2.setText("\n操作记录:连接服务器成功...\n\t\t\t时间:"+YcUtil.getCurrentTime());
 		} catch (NumberFormatException e) {
+			System.out.println("客户端日志:String转Integer失败");
 			e.printStackTrace();
 		} catch (UnknownHostException e) {
+			System.out.println("客户端日志:建立连接失败");
 			e.printStackTrace();
 		} catch (IOException e) {
+			System.out.println("客户端日志:通过socket获取InputStream或OutoutStream失败");
 			e.printStackTrace();
 		}
 	}
@@ -103,6 +106,7 @@ public class Client implements Runnable {
 			Client window = new Client();
 			window.open();
 		} catch (Exception e) {
+			System.out.println("客户端异常:窗口打开异常");
 			e.printStackTrace();
 		}
 	}
@@ -306,6 +310,7 @@ public class Client implements Runnable {
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
+						System.out.println("客户端日志:线程睡眠异常");
 						e.printStackTrace();
 					}
 				}
