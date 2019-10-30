@@ -140,8 +140,13 @@ public class Server {
 				} catch (IOException e) {
 					System.out.println(
 							"服务器日志：客户端" + s.getInetAddress().getHostAddress() + "已经掉线了,时间：" + YcUtil.getCurrentTime());
-					e.printStackTrace();
 					connected = false;
+					try {
+						s.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					clients.remove(this);// 如果出现异常，说明当前的这个客户端已经掉线，所以请从clients中移除
 				}
 			}

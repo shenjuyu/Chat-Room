@@ -241,7 +241,7 @@ public class Client implements Runnable {
 		button_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				t.stop();//停止线程
+				//t.stop();//停止线程
 				disconnect();
 				System.exit(0);
 			}
@@ -299,7 +299,7 @@ public class Client implements Runnable {
 				
 			@Override
 			public void run() {
-				while(true){
+				while(connected){
 					display.syncExec(new Runnable() {
 						
 						@Override
@@ -321,7 +321,7 @@ public class Client implements Runnable {
 	//从服务器读取信息
 	@Override
 	public void run() {
-		while(true){
+		while(connected){
 			try {
 				if(connected==true && s.isConnected()==true && s.isClosed()==false){
 					//从服务器读取信息
